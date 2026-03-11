@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "progressx"
-version = "0.1.0"
+version = "0.1.1"
 description = "Lightweight Python CLI progress bars, spinners, and task manager"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -35,4 +35,4 @@ Issues = "https://github.com/ht21992/progressx/issues"
 progressx = "progressx.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["progressx*"]
+include = ["progressx*","tests*"]

@@ -10,8 +10,12 @@ from .spinner import Spinner
 
 def demo() -> None:
     with ProgressManager(refresh_rate=0.08) as manager:
-        spinner = manager.add(Spinner(label="Preparing", color="green"))
-        bar1 = manager.add(ProgressBar(total=100, label="Download"))
+        spinner = manager.add(
+            Spinner(
+                label="Preparing",
+            )
+        )
+        bar1 = manager.add(ProgressBar(total=100, label="Download", color="blue"))
         bar2 = manager.add(ProgressBar(total=60, label="Process", color="REVERSED"))
 
         for i in range(100):

@@ -4,4 +4,4 @@ from .manager import ProgressManager
 
 __all__ = ["ProgressBar", "Spinner", "ProgressManager"]
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"

@@ -73,7 +73,6 @@ class ProgressBar:
         verified_color = bcolors.WHITE
         if self.color:
             verified_color = bcolors.get_color_code(self.color)
-            parts.append(f"[{verified_color}]")
 
         if self.label:
             parts.append(self.label)
@@ -81,10 +80,10 @@ class ProgressBar:
         parts.append(f"[{self.bar()}]")
 
         if self.show_percent:
-            parts.append(f"[{self.percent():6.2f}%]")
+            parts.append(f"{self.percent():6.2f}%")
 
         if self.show_count:
-            parts.append(f"[{self.current}/{self.total}]")
+            parts.append(f"{self.current}/{self.total}")
 
         if self.show_eta:
             if self.finished:
@@ -92,9 +91,8 @@ class ProgressBar:
             else:
                 parts.append(f"ETA {self.eta()}")
 
-        parts.append(f"[{bcolors.ENDC}]")
-
-        return " ".join(parts)
+        text = " ".join(parts)
+        return f"{verified_color}{text}{bcolors.ENDC}"
 
     def finish(self) -> None:
         self.current = self.total
